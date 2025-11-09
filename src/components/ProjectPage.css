@@ -1,0 +1,217 @@
+/* ProjectPage Styles - Matching Tailwind Design */
+
+/* Main container */
+main {
+  min-height: 100vh;
+  background-color: #fffcf6;
+  color: #18181b; /* zinc-900 */
+  padding-top: 120px; /* Add padding for header */
+}
+
+/* Container */
+.max-w-6xl {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* Tiles - general styling */
+.relative {
+  position: relative;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Tile badge */
+.absolute {
+  position: absolute;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-white\/40 {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.text-white {
+  color: white;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Icon placeholders */
+.w-12 {
+  width: 3rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.bg-white\/30 {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bg-white\/25 {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Text styling */
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-amber-100 {
+  color: #fef3c7;
+}
+
+/* Featured tile specific */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.bg-orange-300\/70 {
+  background-color: rgba(251, 146, 60, 0.7);
+}
+
+/* Navigation */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.space-y-12 > * + * {
+  margin-top: 3rem;
+}
+
+/* Grid placement utility */
+.place-items-center {
+  place-items: center;
+}
