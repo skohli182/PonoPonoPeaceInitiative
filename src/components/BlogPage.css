@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+.blog-page {
+  padding: 2rem 3rem;
+  min-height: calc(100vh - 275px);
+  padding-top: 120px; /* Space for fixed header */
+  background-color: #f8f8f3;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.blog-header h1 {
+  font-family: "Poppins", sans-serif;
+  color: #193d40;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  color: #193d40;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #548ca8;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.blog-card {
+  background-color: white;
+  border: 1px solid #dadada;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h2 {
+  font-family: "Poppins", sans-serif;
+  color: #193d40;
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.blog-type {
+  color: #66a1bc;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  background-color: transparent;
+  border: 1px solid #dadada;
+  padding: 0.5rem 1rem;
+  margin: 0 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #193d40;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #dceef2;
+  border-color: #548ca8;
+}
+
+.pagination button.active {
+  color: #294e63;
+  font-weight: 600;
+  background-color: #dceef2;
+  border-color: #548ca8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-page {
+    padding: 1rem;
+    padding-top: 120px;
+  }
+
+  .blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+}

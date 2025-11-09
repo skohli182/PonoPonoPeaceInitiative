@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+.about-page {
+  background-color: #f8f8f3;
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+.about-body {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  font-size: 18px;
+}
+
+.about-body h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #193d40;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-body h2 {
+  font-size: 2em;
+  color: #193d40;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-body p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #193d40;
+}
+
+.about-body ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.about-body ul li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #193d40;
+}
+
+.about-body img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.about-body hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 2px solid #e0c9a6;
+  width: 100%;
+}
+
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card_Brian,
+.card_Steve,
+.card_Maclaine,
+.card_Naomi,
+.card_Rebecca,
+.card_Reka {
+  border: 1px solid rgb(218, 205, 200);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 400px;
+  background-color: #dfceb9;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.87);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card_Brian:hover,
+.card_Steve:hover,
+.card_Maclaine:hover,
+.card_Naomi:hover,
+.card_Rebecca:hover,
+.card_Reka:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.card_Brian img,
+.card_Steve img,
+.card_Maclaine img,
+.card_Naomi img,
+.card_Rebecca img,
+.card_Reka img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.card_Brian h2,
+.card_Steve h2,
+.card_Maclaine h2,
+.card_Naomi h2,
+.card_Rebecca h2,
+.card_Reka h2 {
+  margin: 0.5rem 0;
+  color: #193d40;
+  font-size: 1.5em;
+}
+
+.card_Brian p,
+.card_Steve p,
+.card_Maclaine p,
+.card_Naomi p,
+.card_Rebecca p,
+.card_Reka p {
+  margin: 0.5rem 0;
+  color: #193d40;
+}
+
+.card_Brian button,
+.card_Steve button,
+.card_Maclaine button,
+.card_Naomi button,
+.card_Rebecca button,
+.card_Reka button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #193d40;
+  color: #f8f8f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.card_Brian button:hover,
+.card_Steve button:hover,
+.card_Maclaine button:hover,
+.card_Naomi button:hover,
+.card_Rebecca button:hover,
+.card_Reka button:hover {
+  background-color: #548ca8;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  z-index: 2000;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #dfceb9;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-inner img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.popup-inner p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #193d40;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0.5rem 1rem;
+  background-color: #193d40;
+  color: #f8f8f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.popup-inner .close-btn:hover {
+  background-color: #548ca8;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-body {
+    padding: 1rem;
+  }
+
+  .about-body h1 {
+    font-size: 2.5em;
+  }
+
+  .about-body h2 {
+    font-size: 1.5em;
+  }
+
+  .card_Brian,
+  .card_Steve,
+  .card_Maclaine,
+  .card_Naomi,
+  .card_Rebecca,
+  .card_Reka {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .board-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-inner {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-body h1 {
+    font-size: 2em;
+  }
+
+  .about-body {
+    font-size: 16px;
+  }
+}
