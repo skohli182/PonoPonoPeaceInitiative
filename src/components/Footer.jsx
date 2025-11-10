@@ -57,7 +57,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/ponoponopeace/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
