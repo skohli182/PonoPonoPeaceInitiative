@@ -19,7 +19,7 @@ body,
   justify-content: flex-start;
   align-items: center;
   padding: 2rem;
-  padding-top: 120px; /* Space for fixed header */
+  padding-top: 120px;
   overflow-y: auto;
   overflow-x: hidden;
   flex-direction: column;
