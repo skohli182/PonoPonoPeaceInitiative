@@ -32,26 +32,17 @@ function Contact() {
           Please fill out the information below so we can direct you to the
           right person!
         </p>
-        <button className="button">Contact us!</button>
-        <p>First Name*</p>
-        <div className="input-boxes">
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <p>Last Name*</p>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <p>Message*</p>
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+        <div className="contact-form">
+          <button className="button">Contact us!</button>
+          <div className="form-fields">
+            <p>First Name*</p>
+            <input type="text" value={firstName} onChange={handleChangefN}/>
+            <p>Last Name*</p>
+            <input type="text" value={lastName} onChange={handleChangelN} />
+            <p>Message*</p>
+            <input type="text" value={message} onChange={handleChangeM} />
+          </div>
+          <button className="button">Submit!</button>
         </div>
       </div>
     </div>
