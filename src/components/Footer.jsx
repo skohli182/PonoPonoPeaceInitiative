@@ -41,7 +41,7 @@ function Footer() {
             <h2 className="footer-title">Follow us</h2>
             <div className="social-icons">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/pono-pono-peace-initiative/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
