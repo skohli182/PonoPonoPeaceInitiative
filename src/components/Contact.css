@@ -129,6 +129,12 @@ body,
   font-weight: 500;
 }
 
+.centerB{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .form-fields input {
   font-family: "Poppins";
   font-size: 20px;
