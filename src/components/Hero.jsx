@@ -1,5 +1,7 @@
 import React from "react";
 import "./Hero.css";
+import groupPhoto from "../images/groupPhoto.png";
+import peacebuilding from "../images/peacebuilding.png";
 
 function Hero() {
   return (
@@ -18,10 +20,10 @@ function Hero() {
         </div>
         <div className="hero-images">
           <div className="image-placeholder">
-            <span>Photo 1</span>
+            <img src={groupPhoto} alt="Group Photo" />
           </div>
           <div className="image-placeholder">
-            <span>Photo 2</span>
+            <img src={peacebuilding} alt="Peacebuilding" />
           </div>
         </div>
       </div>
