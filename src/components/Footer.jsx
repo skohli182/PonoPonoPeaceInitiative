@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../images/ponologo.png";
+import {Link} from "react-router-dom";
 
 function Footer() {
   return (
@@ -14,23 +15,33 @@ function Footer() {
 
         <div className="footer-links">
           <div className="footer-column">
-            <p>Home</p>
-            <p>About</p>
-            <p>Projects</p>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/projects">Projects</Link>
+            </li>
           </div>
 
           <div
             className="footer-column"
             style={{ transform: "translateX(7rem) translateY(1rem)" }}
           >
-            <p>Blog</p>
-            <p>Contact</p>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </div>
           <div className="footer-column">
             <h2 className="footer-title">Follow us</h2>
             <div className="social-icons">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/pono-pono-peace-initiative/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -46,7 +57,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/ponoponopeace/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
