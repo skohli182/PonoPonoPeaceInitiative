@@ -15,18 +15,29 @@ function Contact() {
   const handleChangeM = (e) => {
     setMessage(e.target.value);
   };
+  const [email, setEmail] = useState("");
+  const handleChangeE = (e) => {
+    setEmail(e.target.value);
+  }
   const formRef = useRef(null);
   const handleScrollToForm = () => {
     formRef.current?.scrollIntoView({behavior:"smooth"});
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!email || !firstName || !lastName || !message)
+    {
+      alert("Please fill out all required fields");
+      return;
+    }
     console.log("Form submitted:");
+    console.log("Email:", email);
     console.log("First Name:", firstName);
     console.log("Last Name:", lastName)
     console.log("Message", message);
   }
   return (
-    <div className="full-page">
+    <form className="full-page" onSubmit={handleSubmit}>
       <div>
         <p className="main-text">Get in Touch!</p>
         <div className="contact-row">
@@ -43,25 +54,31 @@ function Contact() {
           right person!
         </p>
         <div className="centerB">
-          <button className="button" onClick={handleScrollToForm}>
+          <button type="button" className="button" onClick={handleScrollToForm}>
             Contact us!
           </button>
         </div>
         <div className="contact-form" ref={formRef}>
           <div className="form-fields">
+            <p>Email*</p>
+            <input type="text" value={email} onChange={handleChangeE}/>
             <p>First Name*</p>
             <input type="text" value={firstName} onChange={handleChangefN}/>
             <p>Last Name*</p>
             <input type="text" value={lastName} onChange={handleChangelN} />
             <p>Message*</p>
-            <input type="text" value={message} onChange={handleChangeM} />
+            <textarea
+              value={message}
+              onChange={handleChangeM}
+              rows="5"
+            />
           </div>
-          <button className="button" onClick={handleSubmit}>
+          <button type="submit" className="button">
             Submit!
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
