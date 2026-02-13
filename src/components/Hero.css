@@ -198,3 +198,68 @@
 .image-placeholder:nth-child(2) img {
   object-fit: cover;
 }
+
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid #e0c9a6;
+  margin: 0;
+  opacity: 0.3;
+}
+
+/* What We Do Section */
+.what-we-do {
+  background-color: #f8f8f3;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.what-we-do-container {
+  max-width: 1200px;
+  width: 100%;
+  color: #193d40;
+}
+
+.what-we-do h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #193d40;
+}
+
+.what-we-do-intro {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.what-we-do-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.what-we-do-list li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .what-we-do {
+    padding: 3rem 1.5rem;
+  }
+
+  .what-we-do h2 {
+    font-size: 2rem;
+  }
+
+  .what-we-do-intro {
+    font-size: 1.1rem;
+  }
+
+  .what-we-do-list {
+    font-size: 1rem;
+  }
+}
