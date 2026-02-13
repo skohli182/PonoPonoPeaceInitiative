@@ -15,22 +15,22 @@ function Header() {
       <nav className="nav-right">
         <ul className="nav-links">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>About</Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Projects</Link>
           </li>
           <li>
-            <Link to="/donate">Support</Link>
+            <Link to="/donate" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Support</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Blog</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Contact</Link>
           </li>
           <li>
             <input type="text" placeholder="Search" className="search-input" />
