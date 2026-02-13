@@ -10,61 +10,59 @@ import groupPhoto from "../images/groupPhoto.png";
 
 function About() {
   return (
-    <div className="about-page">
+    <div className="about-page"> 
       <div className="about-body">
         <span className="poppins-regular">
           <h1>About Us</h1>
           <p>
-            The Pono Pono Peace Initiative is a 501(c)(3) charitable
-            organization registered in Hawaii. Our mission is to empower
-            peacebuilding students by offering supplemental learning,
-            internships, and career development opportunities tailored to the
-            Asia-Pacific region. Our vision is to ensure that 80% of local
+            The Pono Pono Peace Initiative is a 501(c)(3) charitable 
+            organization registered in Hawaii. Our mission is to empower 
+            peacebuilding students by offering supplemental learning, 
+            internships, and career development opportunities tailored to the 
+            Asia-Pacific region. Our vision is to ensure that 80% of local 
             peacebuilding students graduate with a clear path to graduate school
-            or multiple job opportunities that value their unique training and
-            skills.
+            or multiple job opportunities that value their unique training and skills.
           </p>
           <h2>Our values are:</h2>
           <ul>
             <li>
               <b>Student-Centric Approach:</b> We prioritize our students' needs
-              and aspirations, ensuring that our programs and initiatives are
-              tailored to their individual development and career goals.
+               and aspirations, ensuring that our programs and initiatives are 
+               tailored to their individual development and career goals.
             </li>
             <li>
-              <b>Equity and Accessibility:</b> We are committed to creating an
-              inclusive environment that removes barriers and provides equal
-              opportunities for all peacebuilding students, regardless of their
+              <b>Equity and Accessibility:</b> We are committed to creating an 
+              inclusive environment that removes barriers and provides equal 
+              opportunities for all peacebuilding students, regardless of their 
               background or socioeconomic status.
             </li>
             <li>
-              <b>Collaborative Partnerships:</b> We foster strong relationships
-              with organizations, institutions, and industry leaders, both
-              locally in Hawaii and across the Asia-Pacific and Oceania region,
-              to expand the range of internships, training programs, and job
+              <b>Collaborative Partnerships:</b> We foster strong relationships 
+              with organizations, institutions, and industry leaders, both 
+              locally in Hawaii and across the Asia-Pacific and Oceania region, 
+              to expand the range of internships, training programs, and job 
               opportunities available to our students.
             </li>
             <li>
               <b>Continuous Improvement:</b> We continuously evaluate and
-              enhance our programs to ensure they remain relevant, effective,
-              and aligned with the evolving needs of our students and the job
-              market.
+               enhance our programs to ensure they remain relevant, effective,
+                and aligned with the evolving needs of our students and the job market.
             </li>
             <li>
-              <b>Ethical Integrity:</b> We uphold the highest standards of
-              ethical conduct and professional integrity in all our dealings,
+              <b>Ethical Integrity:</b> We uphold the highest standards of 
+              ethical conduct and professional integrity in all our dealings, 
               serving as role models for our students and the community.
             </li>
           </ul>
           <br></br>
           <p>
-            Our name comes from the Hawaiian word <b>'Pono'</b> which means
-            balance and righteousness. In Hawaiian when you put two words beside
-            each other, their meaning is deepened or emphasized. Thus 'Pono
+            Our name comes from the Hawaiian word <b>'Pono'</b>, which means
+            balance and righteousness. In Hawaiian, when you put two words beside 
+            each other, their meaning is deepened or emphasized. Thus, 'Pono 
             Pono' extends Pono to a deeper level and reminds us that to have{" "}
-            <u>Pono Pono peace</u> it is not enough to avoid conflict or do
-            right; we need to do more to create peace! It is not enough to
-            remove the weeds; we must plant the flowers and food of peace.
+            <u>Pono Pono peace</u>, it is not enough to avoid conflict or do right; we need to do 
+            more to create peace! It is not enough to remove the weeds;
+             we must plant the flowers and food of peace.
           </p>
           <br></br>
           <p>
@@ -74,11 +72,8 @@ function About() {
             </b>
           </p>
           <p>
-            <b>
-              This should be a group photo of the Pono Pono Peace Initiative
-            </b>
           </p>
-          <img
+           <img
             src={groupPhoto}
             height={650}
             width={800}
@@ -87,15 +82,14 @@ function About() {
           ></img>
           <br></br>
           <p>
-            Pono's work was initially catalyzed by the vision of Naomi Pedersen,
-            a Brigham Young University-Hawaii (BYUH) Intercultural Peacebuilding
-            program student. Now an alumnus, Naomi saw an opportunity to
-            increase the impact of peacebuilding. We operate independently from
-            any university but work with peacebuilding students and alumni to
-            improve the skills of peacebuilding students and connect them with
-            opportunities in the field. To this end, the Pono Pono Peace
-            Initiative has undertaken a multifaceted approach to cultivating a
-            thriving peacebuilding ecosystem:
+            Pono's work was initially catalyzed by the vision of Naomi Pedersen, 
+            a Brigham Young University-Hawaii (BYUH) Intercultural Peacebuilding 
+            program student. Now an alumnus, Naomi saw an opportunity to increase 
+            the impact of peacebuilding. We operate independently from any university 
+            but work with peacebuilding students and alumni to improve their skills 
+            and connect them with opportunities in the field. To this end, 
+            the Pono Pono Peace Initiative has undertaken a multifaceted approach 
+            to cultivating a thriving peacebuilding ecosystem:
           </p>
           <ul>
             <li>
