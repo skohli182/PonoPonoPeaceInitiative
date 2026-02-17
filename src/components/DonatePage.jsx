@@ -1,165 +1,102 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./DonatePage.css";
 import Logo from "../images/ponologo.png";
+import DonationImage from "../images/Computers For College Flyer.webp";
 
 const theme = {
   bg: "#F8F8F3",
   text: "#222222",
   subtext: "#4A4A4A",
-  primary: "#193D40",
+  primary: "#DFCEB9",
   border: "#F8F8F3",
 };
 
 export default function DonatePage() {
-  const [freq, setFreq] = useState("one");
-  const [amount, setAmount] = useState(5);
-  const [currency] = useState("USD ($)");
-
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://js.stripe.com/v3/buy-button.js";
+  script.async = true;
+  document.body.appendChild(script);
+}, []);
   return (
     <main
       className="min-h-screen"
       style={{ backgroundColor: theme.bg, color: theme.text }}
     >
-      <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-[320px,1fr] gap-10 py-10">
-        {/* Left column */}
-        <aside className="space-y-6">
-          <div className="flex items-center gap-4">
+      <div className="max-w-6xl mx-auto px-5 py-12">
+        {/* Page heading */}
+        <header className="mb-10">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-3">
+            Support the Pono Pono Peace Initiative
+          </h1>
+          <p className="text-sm md:text-base text-neutral-700 max-w-2xl leading-relaxed">
+            Your gift helps us continue our work in peacebuilding, education,
+            and community outreach. Use the secure form below to make a one-time
+            or recurring contribution.
+          </p>
+        </header>
+
+        {/* Content grid */}
+        <div className="grid md:grid-cols-[320px,1fr] gap-10 items-start">
+          {/* Left column */}
+          <aside className="space-y-6">
+            <div className="flex items-center gap-4">
+              <img
+                src={Logo}
+                alt="Pono Pono Peace Initiative"
+                className="w-16 h-16 object-contain"
+              />
+              <div>
+                <div className="text-xl font-semibold leading-tight">
+                  Pono Pono
+                  <br />
+                  Peace Initiative
+                </div>
+                <p className="text-xs text-neutral-600 mt-1">
+                  A project of compassion, dialogue, and action.
+                </p>
+              </div>
+            </div>
+
             <img
-              src={Logo}
-              alt="Pono Pono Peace Initiative"
-              className="w-16 h-16 object-contain"
+              src={DonationImage}
+              alt= "Computers For College Flyer"
+              className="w-full rounded-2xl border object-contain bg-white p-3"
+              style={{ borderColor: theme.border, maxHeight: "260px" }}
             />
-            <div className="text-2xl font-semibold leading-tight">
-              Pono Pono
-              <br />
-              Peace Initiative
-            </div>
-          </div>
 
-          <div
-            className="w-full aspect-[4/3] rounded-xl bg-gradient-to-b from-sky-100 to-teal-200 border"
-            style={{ borderColor: theme.border }}
-          />
-
-          <div
-            className="rounded-xl border p-4"
-            style={{ borderColor: theme.border }}
-          >
-            <div className="font-semibold">Call to Action Here:</div>
-            <p className="mt-2 text-sm leading-6 text-neutral-600">
-              Add a short, persuasive message about what donations support.
-            </p>
-          </div>
-        </aside>
-
-        {/* Right column */}
-        <section>
-          <h1 className="text-6xl font-semibold mb-6">Donate!</h1>
-
-          {/* Frequency + currency */}
-          <div className="flex flex-wrap items-center gap-6 mb-8">
-            <fieldset className="flex items-center gap-6">
-              {/* One-time */}
-              <label className="flex items-center gap-3 cursor-pointer">
-                <span
-                  className={`w-5 h-5 rounded-full border ${
-                    freq === "one"
-                      ? "bg-[var(--accent)] border-transparent"
-                      : ""
-                  }`}
-                  style={{ "--accent": theme.primary }}
-                />
-                <input
-                  type="radio"
-                  name="freq"
-                  className="hidden"
-                  checked={freq === "one"}
-                  onChange={() => setFreq("one")}
-                />
-                <span className="text-xl">One-Time</span>
-              </label>
-
-              {/* Monthly */}
-              <label className="flex items-center gap-3 cursor-pointer">
-                <span
-                  className={`w-5 h-5 rounded-full border ${
-                    freq === "monthly"
-                      ? "bg-[var(--accent)] border-transparent"
-                      : ""
-                  }`}
-                  style={{ "--accent": theme.primary }}
-                />
-                <input
-                  type="radio"
-                  name="freq"
-                  className="hidden"
-                  checked={freq === "monthly"}
-                  onChange={() => setFreq("monthly")}
-                />
-                <span className="text-xl">Monthly</span>
-              </label>
-            </fieldset>
-
-            {/* Currency dropdown placeholder */}
-            <div className="ml-auto">
-              <button
-                className="flex items-center gap-3 px-5 py-3 rounded-lg text-xl font-medium"
-                style={{ backgroundColor: theme.primary, color: "#111" }}
-              >
-                {currency}
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                  <path
-                    d="M6 9l6 6 6-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Amount buttons */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
-            {[5, 10, 20, 50, 100].map((v) => (
-              <button
-                key={v}
-                onClick={() => setAmount(v)}
-                className={`rounded-xl border text-2xl font-semibold py-5 ${
-                  amount === v ? "ring-2 ring-offset-2" : ""
-                }`}
-                style={{ "--tw-ring-color": theme.primary }}
-              >
-                ${v}
-              </button>
-            ))}
-
-            <button
-              onClick={() => setAmount("other")}
-              className={`rounded-xl border text-2xl font-semibold py-5 ${
-                amount === "other" ? "ring-2 ring-offset-2" : ""
-              }`}
-              style={{ "--tw-ring-color": theme.primary }}
+            <div
+              className="rounded-2xl border p-5 bg-white/70"
+              style={{ borderColor: theme.border }}
             >
-              Other
-              <div className="text-base font-normal">Amount</div>
-            </button>
-          </div>
+              <div className="font-semibold mb-1">Why your support matters</div>
+              <p className="mt-1 text-sm leading-6 text-neutral-700">
+                Your donation directly supports peacebuilding programs, educational initiatives, and community outreach efforts led by the Pono Pono Peace Initiative. 
+                Every contribution—no matter the size—helps foster dialogue, understanding, and compassionate action in the communities we serve.
+              </p>
+            </div>
+          </aside>
 
-          {/* Donate CTA */}
-          <div className="max-w-xl">
-            <button
-              className="w-full rounded-2xl py-6 text-2xl font-semibold shadow-md hover:shadow-lg transition-shadow"
-              style={{ backgroundColor: theme.primary, color: "#111" }}
-            >
-              Donate and Support
-            </button>
-            <p className="text-sm text-neutral-600 mt-3">
-              Wireframe button — connect to your payment processor (Stripe,
-              PayPal) later.
-            </p>
-          </div>
-        </section>
+          {/* Right column – Stripe embedded checkout */}
+          <section className="flex justify-center">
+            <div className="donate-card w-full max-w-xl flex flex-col items-center">
+              <h2 className="text-2xl font-semibold mb-4">Make a Donation</h2>
+
+              <div className="stripe-frame-wrapper">
+  <stripe-buy-button
+    buy-button-id="buy_btn_1SX8tTH0PWpUh5ANr3H7Lil4"
+    publishable-key="pk_test_51SX8mnH0PWpUh5ANirHc7seveKTmcAUZACPAMn83nMSz0PKNZmaMJOjFdbq2VZUJsrgZTJqvNXDELEmbhmCQFkcy001SUv9KXJ"
+  >
+  </stripe-buy-button>
+</div>
+
+              <p className="text-sm text-neutral-700 text-center mt-4 px-4">
+                *All payments are processed securely through Stripe. No card
+                details are stored on this site.*
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
   );
