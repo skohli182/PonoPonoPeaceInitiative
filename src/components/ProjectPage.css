@@ -215,3 +215,121 @@ main {
 .place-items-center {
   place-items: center;
 }
+
+/* ===== Animated / expanded project cards ===== */
+
+/* Base animated card */
+.card-tile {
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  will-change: transform, box-shadow;
+}
+
+.card-tile:hover {
+  transform: translateY(-4px) translateX(1px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Expanded row layout (3-panel strip) */
+.card-row-expanded {
+  grid-column: 1 / -1;           /* span full width of the grid */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+  background-color: #fffaf3;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Stack panels vertically on small screens */
+@media (max-width: 767px) {
+  .card-row-expanded {
+    flex-direction: column;
+  }
+}
+
+/* Panels */
+.card-panel-left,
+.card-panel-middle,
+.card-panel-right {
+  padding: 1.5rem;
+}
+
+.card-panel-left {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-panel-middle {
+  flex: 2;
+  animation: slideInMiddle 260ms ease-out;
+}
+
+.card-panel-right {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.04);
+  animation: slideInRight 260ms ease-out;
+}
+
+/* Close button */
+.card-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* Animations */
+@keyframes slideInMiddle {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.project-flyer {
+  width: 100%;
+  max-height: 420px;      /* controls how tall it gets */
+  object-fit: contain;    /* prevents squishing */
+  border-radius: 1.25rem; /* rounded-2xl vibe */
+  border: 1px solid #e5e5e5;
+  background: white;
+  padding: 12px;          /* makes flyer feel “framed” */
+}
+
+.status-pill {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.35);
+  color: #193d40;
+}
+
+
