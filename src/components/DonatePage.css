@@ -311,3 +311,44 @@ button {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+.donate-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem 1.75rem 2.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centers the Stripe form and keeps it at a good visual width */
+.stripe-frame-wrapper {
+  width: 100%;
+  max-width: 440px; /* tweak 430–450px if you want micro-adjustments */
+  display: flex;
+  justify-content: center;
+}
+
+.stripe-frame-wrapper iframe {
+  width: 100%;
+  display: block;
+}
+
+/* Optional: tighten card padding on small screens */
+@media (max-width: 768px) {
+  .donate-card {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+}
+
+stripe-buy-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
