@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BlogPage.css";
-import { getPostsByType, formatDate } from "../data/blogPosts";
+import { supabase } from "../supabaseClient";
+
 
 function BlogPage() {
+  const [posts, setPosts] = useState([]);
   const [selectedType, setSelectedType] = useState("All");
   const [page, setPage] = useState(1);
   const postsPerPage = 3;
 
-  // Get filtered and sorted posts using centralized data management
-  const filteredPosts = getPostsByType(selectedType);
+  useEffect(() => {
+    async function fetchPosts() {
+      const { data, error } = await supabase
+        .from("posts")
+        .select("*")
+        .eq("is_published", true)
+        .order("created_at", { ascending: false });
+
+      if(error){
+        console.error("Error fetching posts:", error);
+      } else {
+        console.log("Fetched posts:", data);
+        setPosts(data);
+      }
+    }
+
+    fetchPosts();
+  }, [])
+
+  const filteredPosts =
+    selectedType === "All"
+      ? posts
+      : posts.filter((p) => p.genre == selectedType);
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const start = (page - 1) * postsPerPage;
@@ -35,11 +58,16 @@ function BlogPage() {
 
       <div className="blog-list">
         {displayedPosts.map((post) => (
-          <a key={post.id} href={post.link} className="blog-card">
-            <div className="blog-type">{post.type}</div>
+          <a key={post.id} href={`/blog/${post.url_name}`} className="blog-card">
+            <div className="blog-type">{post.genre}</div>
             <h2>{post.title}</h2>
             <p className="meta">
-              {formatDate(post.date)} • {post.author} • {post.readTime}
+              {new Date(post.created_at).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}{" "}
+              • {post.author} • {post.read_time}-min read
             </p>
           </a>
         ))}
