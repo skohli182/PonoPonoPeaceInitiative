@@ -56,6 +56,7 @@
   margin: 2rem auto;
   display: block;
   border-radius: 10px;
+  /* animation: fadeInUp 1s ease-out 0.5s both; */
 }
 
 .about-body hr {
@@ -177,7 +178,7 @@
 }
 
 .popup-inner {
-  position: relative;
+  position: fixed;
   padding: 32px;
   width: 90%;
   max-width: 1000px;
@@ -187,6 +188,10 @@
   color: rgba(0, 0, 0, 0.87);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 .popup-inner img {
