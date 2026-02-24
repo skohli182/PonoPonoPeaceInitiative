@@ -7,11 +7,29 @@ import CardSteve from "./cards/Card_Steve.jsx";
 import CardNaomi from "./cards/Card_Naomi.jsx";
 import CardReka from "./cards/Card_Reka.jsx";
 import groupPhoto from "../images/groupPhoto.png";
+import {Link} from "react-router-dom"; // Used for the one link at the bottom
+
+import { motion, useScroll } from "motion/react"; // Note that npm install motion must be run to import this specific library
 
 function About() {
+    const { scrollYProgress } = useScroll();
   return (
-    <div className="about-page"> 
-      <div className="about-body">
+    <div className="about-page">
+      <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed", // Fixed relative to the screen
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 10, // Height, set it to 10 for now
+          originX: 0,
+          backgroundColor: "#193d40", // Color is "dark green" color (AKA the one used for the footer, buttons, etc.)
+          zIndex: 1000, // Layered "on top" of the page
+        }}
+      /> 
+      <div className="about-body"> {/* The text was slightly touched up compared to the original version, in order to see what could be modified without affecting the layout */}
         <span className="poppins-regular">
           <h1>About Us</h1>
           <p>
@@ -129,10 +147,10 @@ function About() {
             We recognize that Peacebuilding comes in many different shapes and
             sizes.
           </p>
-          <p>
+          <p> {/* This paragraph includes a link to the Contact Page on the original page */}
             If you would like to get involved with the Pono Pono Peace
             Initiative and contribute to the flourishing of peacebuilding in the
-            Asia-Pacific region, we would love to connect with you.
+            Asia-Pacific region, we would love to <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>connect with you.</Link> 
           </p>
           <p>
             Together, we can cultivate a more just, harmonious, and sustainable
@@ -140,7 +158,7 @@ function About() {
           </p>
           <hr></hr>
           <h1>Meet Our Board</h1>
-          <div className="board-members">
+          <div className="board-members"> {/* Cards are listed at the bottom */}
             <CardNaomi />
             <CardReka />
             <CardSteve />
