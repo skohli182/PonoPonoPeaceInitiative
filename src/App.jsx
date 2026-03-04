@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Contact from "./components/Contact";
 import BlogPage from "./components/BlogPage";
+import BlogDetail from "./components/BlogDetail";
 import About from "./components/About";
 import ProjectPage from "./components/ProjectPage";
 import DonatePage from "./components/DonatePage";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetail/>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/donate" element={<DonatePage />} />
         </Routes>
