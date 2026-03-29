@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll, useMotionValueEvent } from "motion/react"; // Import concepts for header scorllin
 import logo from "../images/ponologo.png";
 import "./Header.css";
 
 function Header() {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  // Monitor the scroll progress
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    
+    // If the the current scroll position is more than 500 px compared to the previous scroll postion, then hide the header
+    // Otherwise, don't hide the header
+    if (latest > previous > 0 && latest > 500) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <header className="header">
+    <motion.header 
+      className="header"
+      // Define the animation based on state
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" }, // This state basically means that the header isn't visible when it's state is "hidden"
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.5, ease: "easeInOut" }} // Transition takes 0.5 seconds
+      style={{
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 1000, // Set this to always be lower than the scroll bar so that the scroll bar is "above" it
+      }}
+    >
       <div className="header-left">
         <Link to="/" className="logo-link">
           <img src={logo} alt="Pono Pono Logo" className="logo" />
@@ -37,7 +69,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 
