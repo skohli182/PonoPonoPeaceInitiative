@@ -56,6 +56,29 @@ function Hero() {
           </ul>
         </div>
       </section>
+
+      <hr className="section-divider" />
+
+      <section className="pono-meaning">
+        <div className="pono-meaning-container">
+          <h2>What Does Pono Pono Mean?</h2>
+          <p>
+            In Hawaiian, placing two words side by side deepens or emphasizes
+            meaning. "Pono" means balance and righteousness, so "Pono Pono"
+            strengthens that idea and suggests that peace requires more than
+            avoiding conflict or simply doing right. It means actively creating
+            peace—not just removing harm, but building what supports wellbeing.
+          </p>
+          <p>
+            Pono Pono reflects positive peace: not only the absence of conflict,
+            but the presence of attitudes, institutions, and structures that
+            sustain fair, peaceful communities. It calls us to be positive
+            influences in peacebuilding at home, work, school, and in our
+            communities by helping create conditions where peace can truly
+            thrive.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

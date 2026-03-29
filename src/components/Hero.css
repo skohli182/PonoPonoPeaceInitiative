@@ -263,3 +263,50 @@
     font-size: 1rem;
   }
 }
+
+/* Pono Meaning Section */
+.pono-meaning {
+  background-color: #f8f8f3;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pono-meaning-container {
+  max-width: 1200px;
+  width: 100%;
+  color: #193d40;
+}
+
+.pono-meaning h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #193d40;
+}
+
+.pono-meaning p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  max-width: 900px;
+}
+
+.pono-meaning p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .pono-meaning {
+    padding: 3rem 1.5rem;
+  }
+
+  .pono-meaning h2 {
+    font-size: 2rem;
+  }
+
+  .pono-meaning p {
+    font-size: 1.1rem;
+  }
+}

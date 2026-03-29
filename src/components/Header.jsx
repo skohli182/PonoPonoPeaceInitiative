@@ -1,18 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../images/ponologo.png";
 import "./Header.css";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close menu whenever the route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
   return (
     <header className="header">
-      <div className="header-left">
-        <Link to="/" className="logo-link">
-          <img src={logo} alt="Pono Pono Logo" className="logo" />
-          <div className="logo-text">Pono Pono Peace Initiative</div>
-        </Link>
+      <div className="header-top">
+        <div className="header-left">
+          <Link to="/" className="logo-link">
+            <img src={logo} alt="Pono Pono Logo" className="logo" />
+            <div className="logo-text">Pono Pono Peace Initiative</div>
+          </Link>
+        </div>
+        <button
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <nav className="nav-right">
+      <nav className={`nav-right ${menuOpen ? "nav-open" : ""}`}>
         <ul className="nav-links">
           <li>
             <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Home</Link>
