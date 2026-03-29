@@ -6,8 +6,8 @@ import {Link} from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer-container">
-      <div className="footer-left img">
-        <img src={logo} alt="Pono Pono Logo" />
+      <div className="footer-left">
+        <img src={logo} alt="Pono Pono Logo" className="footer-logo" />
       </div>
 
       <div className="footer-right">
