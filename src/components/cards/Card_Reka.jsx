@@ -14,26 +14,26 @@ function CardReka() {
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
           <img src={profilePicReka} alt="Profile Picture"></img>
           <p>
-            My name is Réka, I am originally from Hungary though I lived all
+            Réka, is originally from Hungary, though has lived all
             over Europe before moving to Hawaii in 2014.
           </p>
           <p>
-            I got my double bachelors in Peacebuilding & Psychology, I graduated
+            Obtaining her double bachelors in Peacebuilding & Psychology, she graduated
             from BYUH in 2018.
           </p>
           <p>
-            I am a mother of 4 children. I just finished a criminal justice
-            certificate at UH and I am transferring to grad school in a few
-            weeks to get my MA in Conflict Transformation at the Peace & Justice
+            A mother of 4 children, Réka has recently finished a criminal justice
+            certificate at UH and is transferring to grad school in a few
+            weeks to get her MA in Conflict Transformation at the Peace & Justice
             Center at EMU.
           </p>
           <p>
-            I was a field director for the McKay Center and was also involved in
-            volunteering with the center while I was a student. My main focus
-            was mediation. I had a chance in 2015 to go to a field trip to
-            Barcelona for the Summit of Nobel Peace Laureates and I always
-            wished more of my peers had this opportunity because it truly
-            enhanced my educational experience.
+            Réka was a field director for the McKay Center and was also involved in
+            volunteering with the center while she was a student, with her main focus
+            was mediation. She had a chance in 2015 to go to a field trip to
+            Barcelona for the Summit of Nobel Peace Laureates and always
+            wished more of her peers had this opportunity because it truly
+            enhanced her educational experience.
           </p>
         </Popup>
       </span>
