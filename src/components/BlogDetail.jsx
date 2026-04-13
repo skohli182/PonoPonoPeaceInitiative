@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import "./BlogDetail.css";
+import ReactMarkdown from 'react-markdown';
 
 function BlogDetail() {
     const { slug } = useParams();
@@ -48,7 +49,7 @@ function BlogDetail() {
                 </p>
 
                 <div className="blog-content">
-                    {post.content}
+                    <ReactMarkdown>{post.content}</ReactMarkdown>
                 </div>
             </div>
         </section>
