@@ -1,31 +1,32 @@
 /**
  * ProjectPage.jsx
  * ----------------------------------
- * Displays all projects from Supabase in a card grid.
+ * Displays all projects in a responsive grid.
  *
  * Features:
+ * - Fetches data from Supabase
  * - Animated cards (Intersection Observer)
  * - Expandable project view (3-panel layout)
- * - Dynamic data from Supabase
+ * - CTA section linking to Donate page
  */
 
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom"; // 🔥 Used for navigation
 import "./ProjectPage.css";
 import { supabase } from "../supabaseClient";
 
 /**
- * Theme configuration (centralized colors)
+ * Centralized theme colors
+ * Keeps styling consistent across components
  */
 const theme = {
   card: "#DFCEB9",
   maroon: "#193D40",
-  border: "#F8F8F3",
 };
 
-/**
- * ================= EXPANDED PROJECT VIEW =================
- * Full-width 3-panel layout when a card is clicked
- */
+/* =======================================================
+   EXPANDED PROJECT VIEW (Full-width layout)
+======================================================= */
 function ProjectExpandedRow({ project, onCollapse }) {
   const { title, longDesc, shortDesc, featuredImage, status } = project;
 
@@ -33,7 +34,8 @@ function ProjectExpandedRow({ project, onCollapse }) {
 
   return (
     <article className="card-row-expanded relative">
-      {/* Close button */}
+
+      {/* Close Button */}
       <button className="card-close" onClick={onCollapse}>
         X
       </button>
@@ -85,9 +87,9 @@ function ProjectExpandedRow({ project, onCollapse }) {
   );
 }
 
-/**
- * ================= MAIN PROJECT PAGE =================
- */
+/* =======================================================
+   MAIN PROJECT PAGE
+======================================================= */
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
   const [expandedProject, setExpandedProject] = useState(null);
@@ -96,7 +98,7 @@ export default function ProjectsPage() {
   const refs = useRef([]);
 
   /**
-   * Fetch projects from Supabase on load
+   * Fetch projects from Supabase on page load
    */
   useEffect(() => {
     async function fetchProjects() {
@@ -116,8 +118,8 @@ export default function ProjectsPage() {
   }, []);
 
   /**
-   * Intersection Observer for animation
-   * Adds "card-show" when cards enter viewport
+   * Intersection Observer
+   * Adds animation when cards enter viewport
    */
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -141,7 +143,7 @@ export default function ProjectsPage() {
   }, [projects]);
 
   /**
-   * If a project is clicked → show expanded view
+   * If a card is clicked → show expanded view
    */
   if (expandedProject) {
     return (
@@ -157,12 +159,30 @@ export default function ProjectsPage() {
   }
 
   /**
-   * Default grid view (all projects)
+   * Default grid view
    */
   return (
     <main className="min-h-screen bg-[#FFFCF6] text-zinc-900">
       <div className="max-w-6xl mx-auto px-6 py-10 space-y-12">
 
+        {/* ================= HEADER ================= */}
+        <header className="projects-header">
+          <h1>Our Projects</h1>
+
+          {/* Short intro */}
+          <p className="subtitle">
+            Explore the initiatives we've worked on and continue to support.
+          </p>
+
+          {/* Supporting description */}
+          <p className="description">
+            From providing technology access to underserved students to hosting
+            cultural and educational programs, each project reflects our mission
+            to build stronger, more connected communities.
+          </p>
+        </header>
+
+        {/* ================= PROJECT GRID ================= */}
         <section className="grid md:grid-cols-4 gap-6">
           {projects.map((proj, index) => {
             const isHero = index === 0;
@@ -189,7 +209,8 @@ export default function ProjectsPage() {
                 }}
                 onClick={() => setExpandedProject(formattedProj)}
               >
-                {/* "+" Expand Button */}
+
+                {/* Expand Button */}
                 <button className="absolute right-3 top-3 w-7 h-7 grid place-items-center rounded-full bg-white/40 text-white font-bold">
                   +
                 </button>
@@ -219,14 +240,11 @@ export default function ProjectsPage() {
                   </div>
                 )}
 
-                {/* Hero decorative dots (first card only) */}
+                {/* Decorative dots (hero card only) */}
                 {isHero && (
-                  <div className="mt-4 flex flex-wrap gap-2 opacity-80">
+                  <div className="mt-3 flex items-center gap-[4px]">
                     {Array.from({ length: 12 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="w-2 h-2 rounded-full bg-orange-300/70"
-                      />
+                      <div key={i} className="dot" />
                     ))}
                   </div>
                 )}
@@ -234,6 +252,24 @@ export default function ProjectsPage() {
             );
           })}
         </section>
+
+        {/* ================= CTA SECTION ================= */}
+        <section className="projects-cta">
+
+          <h2>Want to Support Our Work?</h2>
+
+          <p>
+            Your support helps us expand our impact and bring more initiatives
+            to communities in need.
+          </p>
+
+          {/* 🔥 Proper navigation to Donate Page */}
+          <Link to="/donate" className="cta-button">
+            Donate Now
+          </Link>
+
+        </section>
+
       </div>
     </main>
   );
