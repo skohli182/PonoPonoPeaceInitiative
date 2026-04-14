@@ -17,7 +17,7 @@
 /* Main container */
 main {
   min-height: 100vh;
-  background-color: #fffcf6;
+  background-color: #f8f8f3;
   color: #18181b; /* zinc-900 */
   padding-top: 120px; /* Add padding for header */
 }
