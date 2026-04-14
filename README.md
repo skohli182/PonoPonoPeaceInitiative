@@ -1,6 +1,6 @@
 # Pono Pono Peace Initiative
 
-A website for the Ponopono Peace Initiative — an organization that works to grow the impact of peacebuilding in the Pacific region. The site provides information about the organization's mission, ongoing projects, blog updates, a student peacebuilder competition, and a donation page.
+A website for the Pono Pono Peace Initiative — an organization that works to grow the impact of peacebuilding in the Pacific region. The site provides information about the organization's mission, ongoing projects, blog updates, a student peacebuilder competition, and a donation page.
 
 ## Pages
 
