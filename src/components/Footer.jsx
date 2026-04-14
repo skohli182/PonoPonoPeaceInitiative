@@ -16,13 +16,13 @@ function Footer() {
         <div className="footer-links">
           <div className="footer-column">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Home</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>About</Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Projects</Link>
             </li>
           </div>
 
@@ -31,10 +31,10 @@ function Footer() {
             style={{ transform: "translateX(7rem) translateY(1rem)" }}
           >
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Blog</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Contact</Link>
             </li>
           </div>
           <div className="footer-column">
