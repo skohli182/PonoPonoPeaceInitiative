@@ -9,6 +9,7 @@ import BlogDetail from "./components/BlogDetail";
 import About from "./components/About";
 import ProjectPage from "./components/ProjectPage";
 import DonatePage from "./components/DonatePage";
+import CompetitionPage from "./components/CompetitionPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetail/>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/donate" element={<DonatePage />} />
+          <Route path="/competition" element={<CompetitionPage />} />
         </Routes>
         <Footer />
       </div>

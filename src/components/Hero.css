@@ -1,4 +1,30 @@
-/* Hero Section */
+/* ============================================================
+   Hero.css — Styles for the Home Page (Hero.jsx)
+
+   Colour palette:
+     #193d40  — dark teal  (primary text, headings, buttons, image bg)
+     #0f2a2c  — deeper teal (CTA hover)
+     #f8f8f3  — off-white  (page/hero/what-we-do background)
+     #fdf5e9  — warm cream  (pono-meaning background)
+     #dfceb9  — warm sand  (card borders, accents)
+     #e0c9a6  — muted gold (dividers, heading accent bar)
+     #548ca8  — steel blue (secondary hover accent)
+     #ffffff  — white      (card backgrounds)
+
+   Sections covered:
+     1. Hero            (.hero, .wave, .hero-container, .hero-content,
+                         .hero-images, .image-placeholder, .cta-button)
+     2. Section Divider (.section-divider)
+     3. Shared Layout   (.content-section-container, shared h2)
+     4. What We Do      (.what-we-do, .what-we-do-intro, .what-we-do-list)
+     5. Pono Meaning    (.pono-meaning)
+     6. Animations      (fadeInUp, wave)
+     7. Responsive      (768px, 480px)
+   ============================================================ */
+
+
+/* ── 1. Hero Section ───────────────────────────────────────── */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -9,34 +35,17 @@
   position: relative;
   overflow: hidden;
   padding: 2rem;
-  padding-top: 120px; /* Space for fixed header */
+  padding-top: 120px; /* Offset for the fixed header */
 }
 
-/* Animated background waves */
-.hero::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(248, 248, 243, 0.3) 0%,
-    rgba(248, 248, 243, 0.3) 100%
-  );
-  clip-path: ellipse(100% 80% at 50% 100%);
-  opacity: 0;
-}
-
-/* Wave overlay */
+/* Wave now uses the brand teal at low opacity so it's actually visible */
 .wave {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 200px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,256L48,234.7C96,213,192,171,288,138.7C384,107,480,85,576,101.3C672,117,768,171,864,192C960,213,1056,203,1152,181.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23193d40' fill-opacity='0.06' d='M0,256L48,234.7C96,213,192,171,288,138.7C384,107,480,85,576,101.3C672,117,768,171,864,192C960,213,1056,203,1152,181.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
     no-repeat;
   background-size: cover;
   animation: wave 10s ease-in-out infinite;
@@ -52,6 +61,7 @@
   }
 }
 
+/* Two-column flex layout: text left, images right */
 .hero-container {
   width: 100%;
   max-width: 1200px;
@@ -62,12 +72,14 @@
   padding: 0 2rem;
 }
 
+/* Left column — headline, tagline, CTA */
 .hero-content {
   flex: 1;
   color: #193d40;
   text-align: left;
 }
 
+/* Right column — 2-col image grid */
 .hero-images {
   flex: 2;
   display: grid;
@@ -80,18 +92,20 @@
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  animation: fadeInUp 1s ease-out;
   color: #193d40;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
   font-size: 1.5rem;
   margin-bottom: 3rem;
   color: #193d40;
-  opacity: 0.95;
-  animation: fadeInUp 1s ease-out 0.3s both;
+  opacity: 0.85;
   max-width: 600px;
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
+
+/* ── CTA Button ────────────────────────────────────────────── */
 
 .cta-button {
   display: inline-block;
@@ -113,6 +127,164 @@
   background: #0f2a2c;
 }
 
+/* ── Image Placeholders ────────────────────────────────────── */
+
+/*
+  Previously used an off-brand purple/indigo gradient.
+  Now uses the site's dark teal so images sit within the brand palette.
+*/
+.image-placeholder {
+  background-color: #193d40;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(25, 61, 64, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-placeholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(25, 61, 64, 0.35);
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Second image (peacebuilding.png) uses cover to fill the frame */
+.image-placeholder:nth-child(2) img {
+  object-fit: cover;
+}
+
+
+/* ── 2. Section Divider ────────────────────────────────────── */
+
+/* Full opacity — the gold colour is light enough that it doesn't overpower */
+.section-divider {
+  border: none;
+  border-top: 1px solid #e0c9a6;
+  margin: 0;
+}
+
+
+/* ── 3. Shared Content Section Layout ─────────────────────────
+   Both "What We Do" and "Pono Meaning" share centred layout and
+   max-width. Backgrounds intentionally differ to create visual rhythm.
+────────────────────────────────────────────────────────────── */
+
+.what-we-do,
+.pono-meaning {
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner container that constrains content to a readable width */
+.content-section-container {
+  max-width: 1200px;
+  width: 100%;
+  color: #193d40;
+}
+
+/*
+  Shared h2 treatment: gold underline accent bar beneath each heading
+  provides visual rhythm and ties into the site's warm accent colour.
+*/
+.what-we-do h2,
+.pono-meaning h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #193d40;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 0.85rem;
+  position: relative;
+}
+
+.what-we-do h2::after,
+.pono-meaning h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background-color: #e0c9a6;
+  border-radius: 2px;
+}
+
+
+/* ── 4. What We Do Section ─────────────────────────────────── */
+
+.what-we-do {
+  background-color: #f8f8f3;
+}
+
+.what-we-do-intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 780px;
+}
+
+/*
+  Four activity pillars displayed as a 2×2 card grid instead of a
+  plain bullet list. Each card gets a left-border accent in brand teal.
+*/
+.what-we-do-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+}
+
+.what-we-do-list li {
+  background-color: #ffffff;
+  border: 1px solid #e0c9a6;
+  border-left: 4px solid #193d40;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.what-we-do-list li:hover {
+  box-shadow: 0 4px 16px rgba(25, 61, 64, 0.1);
+  transform: translateY(-2px);
+}
+
+
+/* ── 5. Pono Meaning Section ───────────────────────────────── */
+
+.pono-meaning {
+  background-color: #f8f8f3;
+}
+
+.pono-meaning p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 860px;
+}
+
+.pono-meaning p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ── 6. Animations ─────────────────────────────────────────── */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -124,8 +296,11 @@
   }
 }
 
-/* Responsive Design */
+
+/* ── 7. Responsive ─────────────────────────────────────────── */
+
 @media (max-width: 768px) {
+  /* Hero: stack columns vertically and centre-align text */
   .hero-container {
     flex-direction: column;
     gap: 2rem;
@@ -148,9 +323,43 @@
     font-size: 1rem;
   }
 
+  /* Images stack to a single column */
   .hero-images {
     width: 100%;
     grid-template-columns: 1fr;
+  }
+
+  /* Shared section padding reduction */
+  .what-we-do,
+  .pono-meaning {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .what-we-do h2,
+  .pono-meaning h2 {
+    font-size: 2rem;
+  }
+
+  /* Cards collapse to single column on mobile */
+  .what-we-do-list {
+    grid-template-columns: 1fr;
+  }
+
+  .what-we-do-intro,
+  .pono-meaning p {
+    font-size: 1.05rem;
+  }
+
+  /* Centre the h2 accent bar when text is centred */
+  .what-we-do h2::after,
+  .pono-meaning h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .what-we-do h2,
+  .pono-meaning h2 {
+    text-align: center;
   }
 }
 
@@ -161,152 +370,5 @@
 
   .hero p {
     font-size: 1rem;
-  }
-}
-
-.image-placeholder {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-  transition: transform 0.3s ease;
-  height: 100%;
-  overflow: hidden;
-}
-
-.image-placeholder:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
-}
-
-.image-placeholder span {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-  opacity: 0.8;
-}
-
-.image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-.image-placeholder:nth-child(2) img {
-  object-fit: cover;
-}
-
-/* Section Divider */
-.section-divider {
-  border: none;
-  border-top: 1px solid #e0c9a6;
-  margin: 0;
-  opacity: 0.3;
-}
-
-/* What We Do Section */
-.what-we-do {
-  background-color: #f8f8f3;
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.what-we-do-container {
-  max-width: 1200px;
-  width: 100%;
-  color: #193d40;
-}
-
-.what-we-do h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #193d40;
-}
-
-.what-we-do-intro {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.what-we-do-list {
-  list-style: disc;
-  padding-left: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.what-we-do-list li {
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .what-we-do {
-    padding: 3rem 1.5rem;
-  }
-
-  .what-we-do h2 {
-    font-size: 2rem;
-  }
-
-  .what-we-do-intro {
-    font-size: 1.1rem;
-  }
-
-  .what-we-do-list {
-    font-size: 1rem;
-  }
-}
-
-/* Pono Meaning Section */
-.pono-meaning {
-  background-color: #f8f8f3;
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.pono-meaning-container {
-  max-width: 1200px;
-  width: 100%;
-  color: #193d40;
-}
-
-.pono-meaning h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #193d40;
-}
-
-.pono-meaning p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-  opacity: 0.95;
-  max-width: 900px;
-}
-
-.pono-meaning p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .pono-meaning {
-    padding: 3rem 1.5rem;
-  }
-
-  .pono-meaning h2 {
-    font-size: 2rem;
-  }
-
-  .pono-meaning p {
-    font-size: 1.1rem;
   }
 }
