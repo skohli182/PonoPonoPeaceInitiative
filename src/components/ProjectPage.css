@@ -1,4 +1,18 @@
-/* ProjectPage Styles - Matching Tailwind Design */
+/**
+ * ProjectPage.css
+ * ----------------------------------
+ * Styles for:
+ * - Project grid layout
+ * - Card tiles
+ * - Expanded project view (3-panel layout)
+ * - Animations (fade + slide)
+ * - Mobile responsiveness
+ *
+ * Key Components:
+ * - .card-tile → project card
+ * - .card-row-expanded → expanded view
+ * - .project-icon → circular image
+ */
 
 /* Main container */
 main {
@@ -231,10 +245,13 @@ main {
 
 /* Expanded row layout (3-panel strip) */
 .card-row-expanded {
-  grid-column: 1 / -1;           /* span full width of the grid */
+  grid-column: 1 / -1;
   border-radius: 1.5rem;
   overflow: hidden;
+
   display: flex;
+  align-items: stretch; /* ✅ FIX */
+
   gap: 0;
   background-color: #fffaf3;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -258,7 +275,7 @@ main {
   flex: 0 0 260px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .card-panel-middle {
@@ -279,12 +296,37 @@ main {
 /* Close button */
 .card-close {
   position: absolute;
-  top: 0.9rem;
-  right: 1rem;
-  font-size: 1.3rem;
-  cursor: pointer;
-  background: transparent;
+  top: 12px;
+  right: 12px;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
   border: none;
+
+  background: white;              /* 👈 strong contrast */
+  color: #193d40;                 /* matches your theme */
+
+  font-size: 20px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 👈 makes it float */
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-close:active {
+  transform: scale(0.9);
+}
+
+.card-close:hover {
+  transform: scale(1.05);
 }
 
 /* Animations */
@@ -330,6 +372,138 @@ main {
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.35);
   color: #193d40;
+}
+
+/* ===== Mobile Formatting ===== */
+
+@media (max-width: 768px){
+  .grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Card Redesign */
+  /* Card Redesign */
+.card-tile{
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;   
+  margin-right: auto;
+
+  padding: 20px;
+  border-radius: 26px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+  height: auto;
+  min-height: 140px; /* 🔥 prevents tall stretching */
+}
+
+  /* Top Left Circle Image */
+  .card-tile img {
+  object-fit: cover;
+  display: block;
+}
+
+  /* Title */
+  .card-tile .text-2xl{
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  /* Status */
+  .status-pill{
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-top: 8px;
+  }
+
+  /* "+" Button */
+  .card-tile button{
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    top: 14px;
+    right: 14px;
+  }
+
+  /* Hero Dots */
+  .grid-cols-6{
+    gap: 6px;
+  }
+  .w-2{
+    width: 5px;
+  }
+  .h-2{
+    height: 5px;
+  }
+  .space-y-12 > * + *{
+    margin-top: 1.5rem;
+  }
+}
+
+/* Softer background */
+@media (max-width: 768px){
+  .max-w-6xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Stacked Cards */
+@media (max-width: 768px){
+  .card-tile{
+    margin-bottom: 16px;
+  }
+}
+
+/* Polish */
+@media (max-width: 768px){
+  .card-tile{
+    transition: transform 0.2s ease;
+  }
+  .card-tile:active{
+    transform: scale(0.98)
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .card-close {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+.card-tile {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.card-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FORCE circular project icon */
+.project-icon {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: block;
+}
+
+.project-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
 }
 
 
