@@ -24,8 +24,8 @@ import DonationImage from "../images/Computers For College Flyer.webp";
  */
 const theme = {
   bg: "#F8F8F3",
-  text: "#222222",
-  subtext: "#4A4A4A",
+  text: "#193D40",   // ✅ match rest of site
+  subtext: "#193D40", // optional but cleaner
   primary: "#DFCEB9",
   border: "#F8F8F3",
 };
