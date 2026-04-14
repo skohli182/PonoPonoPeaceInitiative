@@ -3,13 +3,6 @@ html, body, #root {
   margin: 0;
 }
 
-.contact-container {
-  font-family: "Poppins";
-  color: #193d40;
-  width: 100%;
-  background-color: #f8f8f3;
-  min-height: 100vh;
-}
 
 .full-page {
   display: flex;
@@ -17,6 +10,11 @@ html, body, #root {
   align-items: center;
   justify-content: flex-start;
   padding-top: 160px;
+  color: #193d40;
+  background-color: #f8f8f3;
+  min-height: 100vh;
+  font-family: "Poppins";
+  width: 100%;
 }
 
 .main-text {
