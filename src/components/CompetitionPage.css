@@ -1,0 +1,263 @@
+/* ============================================================
+   CompetitionPage.css — Styles for the Competition page (/competition)
+
+   Colour palette mirrors the rest of the site:
+     #193d40  — dark teal (primary text, headings, buttons)
+     #f8f8f3  — off-white (page background)
+     #dfceb9  — warm sand (prize list highlight cards)
+     #e0c9a6  — muted gold (dividers, requirement card borders)
+     #faf9f5  — near-white (requirement card background)
+     #548ca8  — medium blue (hover accent)
+
+   Sections covered:
+     1. Page wrapper     (.competition-page, .competition-body)
+     2. Banner           (.competition-banner, .competition-banner-img)
+     3. Section content  (.competition-section, headings, lists)
+     4. Prize list       (.competition-prize-list)
+     5. Requirements     (.competition-requirements-list)
+     6. Visual image     (.competition-section-img)
+     7. Divider          (.competition-divider)
+     8. Buttons          (.competition-link-button, .secondary)
+     9. Inline links     (.competition-inline-link)
+    10. Coming soon text (.competition-coming-soon)
+    11. Responsive       (768px, 480px)
+   ============================================================ */
+
+
+/* ── 1. Page Wrapper ───────────────────────────────────────── */
+
+.competition-page {
+  background-color: #f8f8f3;
+  min-height: 100vh;
+  padding-top: 120px; /* Offset for the fixed header */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Constrains content to a readable line length and centres it */
+.competition-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 3rem 4rem;
+  font-size: 17px;
+  color: #193d40;
+  line-height: 1.7;
+}
+
+
+/* ── 2. Banner ─────────────────────────────────────────────── */
+
+/* Dark branded header at the top of the page */
+.competition-banner {
+  background-color: #193d40;
+  color: #f8f8f3;
+  border-radius: 12px;
+  padding: 2.5rem 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* competition.png spans the full banner width above the title */
+.competition-banner-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.competition-banner h1 {
+  font-size: 2.6em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.competition-subtitle {
+  font-size: 1.05em;
+  font-weight: 400;
+  opacity: 0.85;
+  margin: 0;
+}
+
+
+/* ── 3. Section Content ────────────────────────────────────── */
+
+.competition-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Section headings (e.g. "Competition Details", "Eligibility") */
+.competition-section h2 {
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #193d40;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* Sub-headings within a section (e.g. "Important Dates") */
+.competition-section h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #193d40;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.competition-section p {
+  margin: 0.75rem 0;
+}
+
+.competition-section ul {
+  margin: 0.75rem 0;
+  padding-left: 1.6rem;
+}
+
+.competition-section ul li {
+  margin: 0.5rem 0;
+}
+
+
+/* ── 4. Prize List ─────────────────────────────────────────── */
+
+/* Replaces default bullets with left-border highlight cards */
+.competition-prize-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.competition-prize-list li {
+  padding: 0.6rem 1rem;
+  margin: 0.4rem 0;
+  background-color: #dfceb9;
+  border-left: 4px solid #193d40;
+  border-radius: 4px;
+}
+
+
+/* ── 5. Submission Requirements List ──────────────────────── */
+
+/* Each requirement rendered as a bordered card for scannability */
+.competition-requirements-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.competition-requirements-list li {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e0c9a6;
+  border-radius: 6px;
+  background-color: #faf9f5;
+}
+
+
+/* ── 6. Section Image ──────────────────────────────────────── */
+
+/* peacebuilding.png used as a full-width visual break between sections */
+.competition-section-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+
+/* ── 7. Divider ────────────────────────────────────────────── */
+
+.competition-divider {
+  border: none;
+  border-top: 2px solid #e0c9a6;
+  margin: 2.5rem 0;
+}
+
+
+/* ── 8. Buttons ────────────────────────────────────────────── */
+
+/* Primary button — solid dark teal (e.g. "Register Now") */
+.competition-link-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.65rem 1.5rem;
+  background-color: #193d40;
+  color: #f8f8f3;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: background-color 0.25s;
+}
+
+.competition-link-button:hover {
+  background-color: #548ca8;
+}
+
+/* Secondary button — outlined, fills on hover (e.g. "Written Summary Template") */
+.competition-link-button.secondary {
+  background-color: transparent;
+  border: 2px solid #193d40;
+  color: #193d40;
+}
+
+.competition-link-button.secondary:hover {
+  background-color: #193d40;
+  color: #f8f8f3;
+}
+
+
+/* ── 9. Inline Links ───────────────────────────────────────── */
+
+.competition-inline-link {
+  color: #193d40;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.competition-inline-link:hover {
+  color: #548ca8;
+}
+
+
+/* ── 10. Coming Soon Placeholder ──────────────────────────── */
+
+/* Used for sections not yet populated (Judges, Prize Details addendum) */
+.competition-coming-soon {
+  font-style: italic;
+  color: #6b7a6a;
+}
+
+
+/* ── 11. Responsive ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .competition-body {
+    padding: 1.25rem 1.25rem 3rem;
+    font-size: 16px;
+  }
+
+  .competition-banner {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+
+  .competition-banner h1 {
+    font-size: 1.9em;
+  }
+
+  .competition-section h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .competition-banner h1 {
+    font-size: 1.6em;
+  }
+}
