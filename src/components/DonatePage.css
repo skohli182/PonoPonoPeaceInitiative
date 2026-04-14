@@ -1,9 +1,22 @@
-/* DonatePage Styles - Matching Tailwind Design */
+/**
+ * DonatePage.css
+ * ----------------------------------
+ * Custom utility classes mimicking Tailwind
+ *
+ * Sections:
+ * - Layout utilities
+ * - Typography
+ * - Grid system
+ * - Donate card styling
+ * - Stripe integration
+ * - Mobile responsiveness
+ * - Animations
+ */
 
 /* Main container */
 main.min-h-screen {
   min-height: 100vh;
-  padding-top: 120px; /* Add padding for header */
+  padding-top: 100px; /* Add padding for header */
 }
 
 /* Layout utilities */
@@ -316,11 +329,18 @@ button {
   background: #ffffff;
   border-radius: 1.5rem;
   padding: 2rem 1.75rem 2.25rem;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.donate-card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s ease;
 }
 
 /* Centers the Stripe form and keeps it at a good visual width */
@@ -349,6 +369,56 @@ stripe-buy-button {
   justify-content: center;
 }
 
+/* MOBILE FOMRATING */ 
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
+  .donate-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  header p {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/* Polish */
+@media (max-width: 768px) {
+  aside {
+    text-align: center;
+  }
+
+  aside img {
+    margin: 0 auto;
+  }
+}
+
+/* Animation */
+.donate-card {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
