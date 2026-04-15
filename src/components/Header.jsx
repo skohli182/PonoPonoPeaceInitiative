@@ -1,19 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion, useScroll, useMotionValueEvent } from "motion/react"; // Import concepts for header scrolling
 import logo from "../images/ponologo.png";
 import "./Header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
 
   // Close menu whenever the route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
+  // Monitor the scroll progress
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    
+    // If the the current scroll position is more than 500 px compared to the previous scroll postion AND the hamburger menu isn't open, then hide the header
+    // Otherwise, don't hide the header
+    if (latest > previous > 0 && latest > 500 && !menuOpen) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <header className="header">
+    <motion.header 
+      className="header"
+      // Define the animation based on state
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" }, // This state basically means that the header isn't visible when it's state is "hidden"
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.5, ease: "easeInOut" }} // Transition takes 0.5 seconds
+      style={{
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 1000, // Set this to always be lower than the scroll bar so that the scroll bar is "above" it
+      }}
+    >
       <div className="header-top">
         <div className="header-left">
           <Link to="/" className="logo-link">
@@ -56,7 +87,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 
