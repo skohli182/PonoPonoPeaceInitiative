@@ -1,0 +1,47 @@
+This document will outline important information regarding the contact page. 
+
+Contact Page structure: 
+- Contact.css which includes styling needed for structure these are predefined and can be adjusted
+- Contact.jsx which includes the different components including text boxes, buttons, text, and images
+
+Additional important files:
+- Footer.css and Footer.jsx for footer styling/modification
+- Header.css and Header.jsx for header styling/modification 
+
+
+Linking contact page with your actual email:
+- https://dashboard.emailjs.com/admin 
+- Navigate to link above and sign in with the pono pono peace initiative email that you'd like to receive emails at (can be your personal as well)
+- Go to email templates
+- Click create new templates
+- Use the following template (or modify if needed):
+        <div style="font-family: system-ui, sans-serif, Arial; font-size: 14px">
+          <div>
+            A new message has been received from your website.
+          </div>
+
+          <div style="margin-top: 20px;">
+            <p><strong>First Name:</strong> {{first_name}}</p>
+            <p><strong>Last Name:</strong> {{last_name}}</p>
+            <p><strong>Email:</strong> {{from_email}}</p>
+            <p><strong>Message:</strong></p>
+            <p>{{message}}</p>
+          </div>
+        </div>
+- Apply changes (you can go back and edit at any time)
+- Update information within contact.jsx specifically this portion: 
+    emailjs
+      .send(
+        "service_h0iy6cp",
+        "template_yq1vewm",
+        templateParams,
+        "cSQoLKbkM2queSkc3"
+      )
+
+      - update service id (first item)
+      - template id (second item)
+      - public key/user id (fourth item)
+      - note: you do not need to modify templateParams and you can use environment variables if you'd like to make the code cleaner 
+
+
+Additional information about code is provided via comments within the Contact.jsx file 

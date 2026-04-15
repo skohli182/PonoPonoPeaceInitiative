@@ -1,9 +1,12 @@
+//importing the styling as well as necessary imports for react this includes the photo located in a different directory 
 import "./Contact.css";
 import React, { useState, useRef } from "react";
 import groupPhoto from "../images/groupPhoto.png";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
+  //useState allows us to capture/see when there is a change in text box values
+  //this is done for all values in the form
   const [firstName, setFirstName] = useState("");
   const handleChangefN = (e) => setFirstName(e.target.value);
 
@@ -16,11 +19,14 @@ function Contact() {
   const [email, setEmail] = useState("");
   const handleChangeE = (e) => setEmail(e.target.value);
 
+  //additional styling change so that the button drops you to the bottom
   const formRef = useRef(null);
   const handleScrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  //this function checks to ensure that users have provided satisfactory information before proceeding to submit meaning none of the values are empty 
+  //if empty this function alerts the user
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -29,6 +35,7 @@ function Contact() {
       return;
     }
 
+    //template param used below to show which fields are being used (if adding fields add here and in the useState above)
     const templateParams = {
       first_name: firstName,
       last_name: lastName,
@@ -56,11 +63,11 @@ function Contact() {
       });
   };
 
+  //this return goes through all of the styling components focused on mainly css
   return (
     <form className="full-page" onSubmit={handleSubmit}>
       <p className="main-text">Get in Touch!</p>
 
-      {/* Contact row: text + image */}
       <div className="contact-row">
         <div className="contact-text">
           <p className="semi-main-text">
@@ -108,4 +115,5 @@ function Contact() {
   );
 }
 
+//exports are needed in order to make this reachable by other files
 export default Contact;
