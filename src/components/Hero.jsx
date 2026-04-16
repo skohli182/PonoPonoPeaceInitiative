@@ -111,7 +111,8 @@ function Hero() {
             meaning. "Pono" means balance and righteousness, so "Pono Pono"
             strengthens that idea and suggests that peace requires more than
             avoiding conflict or simply doing right. It means actively creating
-            peace—not just removing harm, but building what supports wellbeing.
+            peace — not just removing harm, but building what supports
+            wellbeing.
           </p>
           <p>
             Pono Pono reflects positive peace: not only the absence of conflict,
