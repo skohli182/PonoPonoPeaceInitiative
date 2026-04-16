@@ -74,13 +74,8 @@
   margin: 2rem 0;
 }
 
-/* Define how each board member card will look, the images present in the card, and how certain items in the card react to hovering */
-.card_Brian,
-.card_Steve,
-.card_Maclaine,
-.card_Naomi,
-.card_Rebecca,
-.card_Reka {
+/* Define how each board member card will look */
+.card-boardmember {
   border: 1px solid rgb(218, 205, 200);
   border-radius: 10px;
   padding: 20px;
@@ -93,21 +88,13 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card_Brian:hover,
-.card_Steve:hover,
-.card_Maclaine:hover,
-.card_Naomi:hover,
-.card_Rebecca:hover,
-.card_Reka:hover {
+/* Defines what happens when a board member card is hovered over */
+.card-boardmember:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card_Brian img,
-.card_Steve img,
-.card_Maclaine img,
-.card_Naomi img,
-.card_Rebecca img,
-.card_Reka img {
+/* Defines how the image will look in the boardmember card */
+.card-boardmember img {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -115,33 +102,21 @@
   margin-bottom: 1rem;
 }
 
-.card_Brian h2,
-.card_Steve h2,
-.card_Maclaine h2,
-.card_Naomi h2,
-.card_Rebecca h2,
-.card_Reka h2 {
+/* Defines how the header2 will look in the boardmember card */
+.card-boardmember h2 {
   margin: 0.5rem 0;
   color: #193d40;
   font-size: 1.5em;
 }
 
-.card_Brian p,
-.card_Steve p,
-.card_Maclaine p,
-.card_Naomi p,
-.card_Rebecca p,
-.card_Reka p {
+/* Defines how paragraphs will look in the boardmember card */
+.card-boardmember p {
   margin: 0.5rem 0;
   color: #193d40;
 }
 
-.card_Brian button,
-.card_Steve button,
-.card_Maclaine button,
-.card_Naomi button,
-.card_Rebecca button,
-.card_Reka button {
+/* Defines how the button will look in the boardmember card */
+.card-boardmember button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   background-color: #193d40;
@@ -155,12 +130,8 @@
   transition: background-color 0.3s;
 }
 
-.card_Brian button:hover,
-.card_Steve button:hover,
-.card_Maclaine button:hover,
-.card_Naomi button:hover,
-.card_Rebecca button:hover,
-.card_Reka button:hover {
+/* Defines how the button will look in the boardmember card when hovered over */
+.card-boardmember button:hover {
   background-color: #548ca8;
 }
 /* Define how the popup will react */
@@ -230,6 +201,7 @@
   background-color: #548ca8;
 }
 
+/* Defines each font that is used */
 .poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -254,7 +226,8 @@
   font-style: italic;
 }
 
-/* Responsive Design */
+/* If the screen is a width of 768 pixels or smaller */
+/* Apply changes that make the page better suited to a mobile device */
 @media (max-width: 768px) {
   .about-body {
     padding: 1rem;
@@ -268,17 +241,12 @@
     font-size: 1.5em;
   }
 
-  .card_Brian,
-  .card_Steve,
-  .card_Maclaine,
-  .card_Naomi,
-  .card_Rebecca,
-  .card_Reka {
+  .card-boardmember {
     width: 100%;
     max-width: 400px;
   }
 
-  .board-members {
+  .card-boardmember {
     flex-direction: column;
     align-items: center;
   }
@@ -289,6 +257,8 @@
   }
 }
 
+/* If the screen is a width of 480 pixels or smaller */
+/* Apply changes regarding the font size  */
 @media (max-width: 480px) {
   .about-body h1 {
     font-size: 2em;
