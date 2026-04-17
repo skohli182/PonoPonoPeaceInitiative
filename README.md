@@ -23,11 +23,11 @@ The modernized website for the Pono Pono Peace Initiative — a 501(c)(3) charit
 
 ## Technology used
 
-- **React ** is used along with it's various website to build the .jsx files and .css files
+- **React** is used along with it's various website to build the .jsx files and .css files
 - Some libraries used in React include useState and useMotion for the scrolling progress bar, Link for navigation around the website pages, etc.
 - **Vite** is used to convert the .jsx code into files in order to build the website
-- **Supabase** is used to store data for blogs contents, project contents, board member information, etc. In other words, Supabase is used to store data that will be updated reguarly throughout the website's lifespan.
-- **EmailJS** is used for the Contact pgae, namely for the sending of emails
+- **Supabase** is used to store data for blogs contents, project contents, board member information, etc. In other words, Supabase is used to store data that will be updated regularly throughout the website's lifespan.
+- **EmailJS** is used for the Contact page, namely for the sending of emails
 - **Stripe** is used for the Donation page, in order to facilitate the handling and transferring of donations
 
 ## Running the website locally
