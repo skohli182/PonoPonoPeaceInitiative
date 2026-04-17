@@ -83,7 +83,7 @@ function Header() {
             <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>Contact</Link>
           </li>
           <li>
-            <input type="text" placeholder="Search" className="search-input" />
+            {/* Removed until fix can be found for search bar: <input type="text" placeholder="Search" className="search-input" /> */}
           </li>
         </ul>
       </nav>
