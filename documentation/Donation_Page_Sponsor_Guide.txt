@@ -1,0 +1,65 @@
+# Donations Page – Sponsor Guide
+
+## 📌 Overview
+
+This guide explains how to manage donations using Stripe.
+
+---
+
+## 💰 Viewing Donations
+
+1. Log into Stripe: https://stripe.com
+2. Go to **Payments**
+3. View:
+
+   * Amount donated
+   * Date
+   * Payment status
+
+---
+
+## ✏️ Changing Donation Amounts
+
+### Option 1: Fixed Amounts
+
+1. Go to **Products**
+2. Select "Donation"
+3. Edit price
+
+---
+
+### Option 2: Custom Amount (Recommended)
+
+1. Go to **Payment Links**
+2. Edit your donation link
+3. Enable **Custom Amount**
+
+---
+
+## 🔗 Updating the Website Link
+
+If the donation link changes:
+
+1. Open project code
+2. Locate donation button or Stripe button
+3. Replace with new link or button ID
+
+---
+
+## 📊 Tracking Performance
+
+Stripe allows you to:
+
+* View total revenue
+* Track donation trends
+* Export reports
+
+---
+
+## ⚠️ Notes
+
+* No coding required for daily use
+* Stripe handles all security and payments
+* Funds are deposited directly to your bank account
+
+---
