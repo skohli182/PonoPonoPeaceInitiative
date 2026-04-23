@@ -1,0 +1,78 @@
+# Projects Page – Sponsor Guide
+
+## 📌 Overview
+
+This guide explains how to update the Projects page content using Supabase.
+
+You will be given access to the dashboard. No setup is required.
+
+---
+
+## 🔐 Logging In
+
+1. Go to https://supabase.com
+2. Log in using the account provided
+3. Open the project dashboard
+
+---
+
+## 📂 Accessing Projects
+
+1. Click **Table Editor**
+2. Select the **projects** table
+
+---
+
+## ➕ Adding a Project
+
+1. Click **Insert Row**
+2. Fill in the following fields:
+
+* **title** → Project name
+* **description** → Short description
+* **image** → "/images/example.jpg"
+* **status** → ongoing or completed
+
+3. Click **Save**
+
+---
+
+## ✏️ Editing a Project
+
+1. Click on an existing row
+2. Update any field
+3. Click **Save**
+
+---
+
+## ❌ Deleting a Project
+
+1. Select the row
+2. Click **Delete**
+
+---
+
+## 🖼️ Updating Images
+
+1. Upload the image to the website’s `/public/images` folder
+2. Use the format:
+
+"/images/your-image.jpg"
+
+---
+
+## 🟢 Project Status
+
+* **ongoing** → Active projects
+* **completed** → Finished projects
+
+---
+
+## ⚠️ Important Notes
+
+* Changes appear on the website automatically
+* No coding is required
+* Do not modify the `id` field
+* Ensure image names match exactly
+
+---
