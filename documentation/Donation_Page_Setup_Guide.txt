@@ -1,0 +1,96 @@
+# Donations Page – Setup Guide
+
+## 📌 Overview
+
+This guide explains how to set up Stripe for handling donations on the website.
+
+---
+
+## 1. Create a Stripe Account
+
+1. Go to https://stripe.com
+2. Sign up or log in
+3. Complete account setup
+
+---
+
+## 2. Create a Donation Product
+
+1. Navigate to **Products → Add Product**
+2. Enter:
+
+   * Name: Donation
+   * Pricing: One-time payment
+3. Save
+
+---
+
+## 3. Create a Payment Link (Recommended)
+
+1. Go to **Payment Links**
+2. Click **Create Payment Link**
+3. Select your donation product
+4. Enable custom amount (optional)
+5. Click **Create Link**
+6. Copy the generated link
+
+---
+
+## 4. Add Stripe to the Website
+
+### Stripe Script (already implemented)
+
+```javascript
+useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://js.stripe.com/v3/buy-button.js";
+  script.async = true;
+  document.body.appendChild(script);
+}, []);
+```
+
+---
+
+## 5. Add Buy Button
+
+```jsx
+<stripe-buy-button
+  buy-button-id="YOUR_BUTTON_ID"
+  publishable-key="YOUR_PUBLISHABLE_KEY">
+</stripe-buy-button>
+```
+
+Replace:
+
+* `YOUR_BUTTON_ID`
+* `YOUR_PUBLISHABLE_KEY`
+
+---
+
+## 6. Styling Notes
+
+* Stripe form is centered automatically
+* Max width ensures clean layout
+* Fully responsive on mobile
+
+---
+
+## 7. Testing Donations
+
+Use Stripe test card:
+
+```
+4242 4242 4242 4242
+Any future date
+Any CVC
+```
+
+---
+
+## ⚠️ Important Notes
+
+* Do NOT expose secret keys
+* Stripe handles all payment processing securely
+* No backend required
+
+---
