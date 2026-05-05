@@ -1,0 +1,95 @@
+🗄️ Supabase – Content Management Guide
+📌 Overview
+
+This guide explains how to manage website content using Supabase.
+
+Supabase is used to store and update:
+
+Blog posts
+Projects
+Board members
+
+All content updates are done through the Supabase dashboard — no coding required.
+
+🧾 Viewing & Editing Content
+Go to Supabase: https://supabase.com
+Open your project
+Click Table Editor
+Select a table:
+- posts (Blog)
+- projects (Projects Page)
+- board_members (About Page)
+
+You can:
+
+View all entries
+Edit existing rows
+Add new content
+
+✏️ Managing Blog Posts
+Open the posts table
+Add or edit a row
+Required fields:
+title → Blog title
+author → Author name
+genre → (Perspective, Collaborations, Conferences)
+cover_image_url → Image link
+url_name → Unique URL (used for blog page routing)
+read_time → Estimated reading time
+is_published → Set to true to display
+
+
+📁 Managing Projects
+Open the projects table
+Add or edit a row
+Required fields:
+title → Project name
+description → Project details
+image_url → Image link
+status → (Ongoing / Completed)
+
+Projects will automatically appear on the website after saving.
+
+👥 Managing Board Members
+Open the board_members table
+Add or edit a row
+Required fields:
+name → Full name
+position → Role/title
+member_image → Profile image
+member_description → Bio
+
+💡 Tip:
+Use a blank line between paragraphs to format the bio correctly.
+
+🖼️ Managing Images
+
+Images are stored as links in Supabase.
+
+Options:
+
+Upload images to Supabase Storage
+Or paste external image URLs
+
+Make sure:
+
+Links are valid
+Images are optimized for web
+🔄 When Changes Appear
+Changes are saved instantly
+Website updates automatically on refresh
+No deployment required
+
+
+⚠️ Notes
+No coding required for daily use
+Supabase may take a few seconds to load if inactive
+Do not delete required columns
+Keep field names unchanged
+
+
+📊 Tips
+Use clear and consistent titles
+Keep descriptions concise
+Double-check image links
+Use correct categories for blog filtering
